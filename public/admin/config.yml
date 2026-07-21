@@ -3,7 +3,7 @@ backend:
   name: github
   repo: jihwannpark/jihwannpark.github.io
   branch: main
-  base_url: https://sveltia-cms-auth.tcps-laboratory.workers.dev
+  base_url: https://sveltia-cms-auth.jihwannpark.workers.dev
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
