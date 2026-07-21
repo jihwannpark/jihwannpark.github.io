@@ -1,0 +1,61 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# reference materials (not part of the built site)
+/reference/
+
+# raw source photos already copied into public/
+/src/*.jpg
+/src/2024_winter_lab_mt/
+/src/2025_Gear_Train_Conference/
+/src/2025_spring_graduation_presentation/
+/src/2026_한국군사과학기술학회_종합학술대회/
+/src/ADD_Seminar_and_Field_Trip/
+/src/KRISO_Seminar/
+/src/SNU-JNU_Joint_MT/
+/src/한국농업기계학회_2025년_추계학술대회/
+/src/한국농업기계학회_2026년_춘계학술대회/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+.vercel
+
+# one-off content migration script
+gen-content.mts
