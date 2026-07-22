@@ -2,6 +2,7 @@ import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Authors from "@/components/Authors";
+import Socials from "@/components/Socials";
 import {
   awards,
   education,
@@ -11,26 +12,11 @@ import {
   publications,
 } from "@/lib/content";
 
-function SectionTitle({ children }: { children: React.ReactNode }) {
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-8 text-2xl font-semibold text-[#26343a]">{children}</h2>
-  );
-}
-
-function Section({
-  id,
-  title,
-  children,
-}: {
-  id: string;
-  title: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <section id={id} className="mt-20">
-      <SectionTitle>{title}</SectionTitle>
+    <h2 className="mb-6 text-xs font-semibold tracking-[0.14em] text-stone-400 uppercase">
       {children}
-    </section>
+    </h2>
   );
 }
 
@@ -44,160 +30,139 @@ export default function Home() {
       <Nav />
 
       <main
-        className="mx-auto w-full max-w-[1080px] flex-1 pt-16 pb-4"
+        className="mx-auto w-full max-w-[880px] flex-1 pt-14 pb-4"
         style={{
-          paddingLeft: "clamp(20px, 5vw, 32px)",
-          paddingRight: "clamp(20px, 5vw, 32px)",
+          paddingLeft: "clamp(20px, 5vw, 28px)",
+          paddingRight: "clamp(20px, 5vw, 28px)",
         }}
       >
         {/* ---------- Hero ---------- */}
-        <section className="flex flex-col gap-10 md:flex-row md:items-start md:gap-14">
+        <section className="flex flex-col gap-8 sm:flex-row sm:items-start sm:gap-10">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={profile.photo}
             alt={profile.name}
-            className="h-44 w-44 shrink-0 rounded-3xl object-cover md:h-56 md:w-56"
+            className="h-40 w-40 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
           />
 
           <div className="flex-1">
-            <h1 className="text-4xl font-semibold text-[#26343a] md:text-5xl">
+            <h1 className="font-serif text-4xl text-stone-900 md:text-[2.75rem]">
               {profile.name}
             </h1>
-            <p className="mt-2 text-lg text-[#4b3a24]/80">
+            <p className="mt-1 text-lg text-stone-600">
               {profile.role} at{" "}
               {profile.affiliationUrl ? (
                 <a
                   href={profile.affiliationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-[#9c5b33] underline-offset-4 hover:underline"
+                  className="font-medium text-[#c2410c] underline-offset-4 hover:underline"
                 >
                   {profile.affiliation}
                 </a>
               ) : (
-                <span className="font-medium text-[#9c5b33]">
+                <span className="font-medium text-[#c2410c]">
                   {profile.affiliation}
                 </span>
               )}
             </p>
 
             {profile.greeting && (
-              <p className="mt-6 text-xl text-[#26343a]">{profile.greeting}</p>
+              <p className="mt-6 text-lg text-stone-800">{profile.greeting}</p>
             )}
 
             {profile.bio.split("\n\n").map((para, i) => (
-              <p key={i} className="mt-3 text-base text-[#4b3a24]/75">
+              <p key={i} className="mt-3 leading-relaxed text-stone-600">
                 {para}
               </p>
             ))}
 
-            <div className="mt-6 flex flex-wrap gap-2">
-              <a
-                href={`mailto:${profile.email}`}
-                className="rounded-full border border-[#4b3a24]/20 px-4 py-1.5 text-sm font-medium text-[#4b3a24]/80 transition hover:border-[#9c5b33] hover:text-[#9c5b33]"
-              >
-                {profile.email}
-              </a>
-              {profile.links
-                .filter((l) => l.url)
-                .map((l) => (
-                  <a
-                    key={l.label}
-                    href={l.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="rounded-full border border-[#4b3a24]/20 px-4 py-1.5 text-sm font-medium text-[#4b3a24]/80 transition hover:border-[#9c5b33] hover:text-[#9c5b33]"
-                  >
-                    {l.label}
-                  </a>
-                ))}
-              {profile.cv && (
-                <a
-                  href={profile.cv}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-[#4b3a24] px-4 py-1.5 text-sm font-medium text-white transition hover:bg-[#9c5b33]"
-                >
-                  CV
-                </a>
-              )}
-            </div>
+            <Socials />
           </div>
         </section>
 
         {/* ---------- News ---------- */}
         {news.length > 0 && (
-          <Section id="news" title="News">
-            <div className="divide-y divide-[#4b3a24]/10 border-y border-[#4b3a24]/10">
+          <section className="mt-16">
+            <SectionLabel>News</SectionLabel>
+            <div className="flex flex-col gap-3.5">
               {news.map((item, i) => (
-                <div key={i} className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8">
-                  <span className="shrink-0 text-sm font-medium tracking-wide text-[#9c5b33] sm:w-28">
+                <div
+                  key={i}
+                  className="flex flex-col gap-0.5 sm:flex-row sm:gap-6"
+                >
+                  <span className="shrink-0 text-sm text-stone-400 sm:w-24 sm:pt-0.5">
                     {item.date}
                   </span>
-                  <span className="text-base text-[#4b3a24]/80">{item.text}</span>
+                  <span className="text-[15px] leading-relaxed text-stone-700">
+                    {item.text}
+                  </span>
                 </div>
               ))}
             </div>
-          </Section>
-        )}
-
-        {/* ---------- Research interests ---------- */}
-        {profile.researchInterests.length > 0 && (
-          <Section id="interests" title="Research Interests">
-            <div className="flex flex-wrap gap-2">
-              {profile.researchInterests.map((item) => (
-                <span
-                  key={item}
-                  className="rounded-full bg-[#4b3a24]/5 px-4 py-2 text-sm font-medium text-[#4b3a24]/80"
-                >
-                  {item}
-                </span>
-              ))}
-            </div>
-          </Section>
+          </section>
         )}
 
         {/* ---------- Education ---------- */}
         {education.length > 0 && (
-          <Section id="education" title="Education">
-            <div className="divide-y divide-[#4b3a24]/10 border-y border-[#4b3a24]/10">
+          <section className="mt-16">
+            <SectionLabel>Education</SectionLabel>
+            <div className="flex flex-col gap-6">
               {education.map((item, i) => (
                 <div
                   key={i}
-                  className="flex flex-col gap-1 py-5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
+                  className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
                 >
                   <div>
-                    <h3 className="text-base font-semibold text-[#26343a]">
+                    <h3 className="font-semibold text-stone-900">
                       {item.degree}
                     </h3>
-                    <p className="text-sm text-[#4b3a24]/70">
+                    <p className="text-sm text-stone-500">
                       {item.institution}
                       {item.detail ? ` · ${item.detail}` : ""}
                     </p>
                   </div>
-                  <span className="shrink-0 text-sm font-medium text-[#9c5b33]">
+                  <span className="shrink-0 text-sm text-stone-400">
                     {item.period}
                   </span>
                 </div>
               ))}
             </div>
-          </Section>
+          </section>
+        )}
+
+        {/* ---------- Research interests ---------- */}
+        {profile.researchInterests.length > 0 && (
+          <section className="mt-16">
+            <SectionLabel>Research Interests</SectionLabel>
+            <div className="flex flex-wrap gap-2">
+              {profile.researchInterests.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-stone-200 bg-white px-4 py-1.5 text-sm text-stone-700"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </section>
         )}
 
         {/* ---------- Selected publications ---------- */}
         {selected.length > 0 && (
-          <Section id="publications" title="Selected Publications">
-            <div className="divide-y divide-[#4b3a24]/10 border-y border-[#4b3a24]/10">
+          <section className="mt-16">
+            <SectionLabel>Selected Publications</SectionLabel>
+            <div className="flex flex-col gap-7">
               {selected.map((pub, i) => (
-                <article key={i} className="py-6">
-                  <p className="text-sm font-medium tracking-wide text-[#9c5b33]">
+                <article key={i}>
+                  <p className="text-xs font-semibold tracking-wide text-[#c2410c] uppercase">
                     {pub.venue}
                     {pub.date ? ` · ${pub.date}` : ` · ${pub.year}`}
                   </p>
-                  <h3 className="mt-1 text-lg font-semibold text-[#26343a]">
+                  <h3 className="mt-1.5 font-serif text-xl leading-snug text-stone-900">
                     {pub.title}
                   </h3>
-                  <p className="mt-1 text-base text-[#4b3a24]/70">
+                  <p className="mt-1 text-[15px] text-stone-600">
                     <Authors authors={pub.authors} />
                   </p>
                   {pub.link && (
@@ -205,7 +170,7 @@ export default function Home() {
                       href={pub.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-3 inline-block rounded-full border border-[#4b3a24]/20 px-3 py-1 text-xs font-medium text-[#4b3a24]/70 transition hover:border-[#9c5b33] hover:text-[#9c5b33]"
+                      className="mt-2.5 inline-block rounded-md border border-stone-200 bg-white px-2.5 py-1 text-xs font-medium text-stone-600 transition hover:border-[#c2410c] hover:text-[#c2410c]"
                     >
                       Link
                     </a>
@@ -215,58 +180,60 @@ export default function Home() {
             </div>
             <Link
               href="/publications/"
-              className="mt-6 inline-block rounded-full bg-[#4b3a24] px-5 py-2 text-sm font-medium text-white transition hover:bg-[#9c5b33]"
+              className="mt-8 inline-block text-sm font-medium text-[#c2410c] underline-offset-4 hover:underline"
             >
-              All Publications
+              All Publications →
             </Link>
-          </Section>
+          </section>
         )}
 
         {/* ---------- Projects ---------- */}
         {projects.length > 0 && (
-          <Section id="projects" title="Projects">
-            <div className="grid gap-4">
+          <section className="mt-16">
+            <SectionLabel>Projects</SectionLabel>
+            <div className="flex flex-col gap-6">
               {projects.map((p, i) => (
-                <div
-                  key={i}
-                  className="rounded-2xl border border-[#4b3a24]/10 bg-white p-6"
-                >
-                  <h3 className="text-base font-semibold text-[#26343a]">
-                    {p.title}
-                  </h3>
-                  <p className="mt-1 text-sm text-[#9c5b33]">
+                <div key={i}>
+                  <h3 className="font-semibold text-stone-900">{p.title}</h3>
+                  <p className="mt-0.5 text-sm text-[#c2410c]">
                     {[p.role, p.organization, p.period]
                       .filter(Boolean)
                       .join(" · ")}
                   </p>
                   {p.summary && (
-                    <p className="mt-2 text-sm text-[#4b3a24]/75">{p.summary}</p>
+                    <p className="mt-1.5 text-[15px] leading-relaxed text-stone-600">
+                      {p.summary}
+                    </p>
                   )}
                 </div>
               ))}
             </div>
-          </Section>
+          </section>
         )}
 
         {/* ---------- Awards ---------- */}
         {awards.length > 0 && (
-          <Section id="awards" title="Awards & Activities">
-            <div className="divide-y divide-[#4b3a24]/10 border-y border-[#4b3a24]/10">
+          <section className="mt-16">
+            <SectionLabel>Awards &amp; Activities</SectionLabel>
+            <div className="flex flex-col gap-3.5">
               {awards.map((a, i) => (
-                <div key={i} className="flex flex-col gap-1 py-4 sm:flex-row sm:gap-8">
-                  <span className="shrink-0 text-sm font-medium tracking-wide text-[#9c5b33] sm:w-28">
+                <div
+                  key={i}
+                  className="flex flex-col gap-0.5 sm:flex-row sm:gap-6"
+                >
+                  <span className="shrink-0 text-sm text-stone-400 sm:w-24 sm:pt-0.5">
                     {a.date}
                   </span>
-                  <span className="text-base text-[#4b3a24]/80">
+                  <span className="text-[15px] leading-relaxed text-stone-700">
                     {a.title}
                     {a.organization && (
-                      <span className="text-[#4b3a24]/55"> · {a.organization}</span>
+                      <span className="text-stone-400"> · {a.organization}</span>
                     )}
                   </span>
                 </div>
               ))}
             </div>
-          </Section>
+          </section>
         )}
       </main>
 

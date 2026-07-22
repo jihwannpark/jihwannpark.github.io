@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Raleway } from "next/font/google";
+import { Instrument_Sans, Hedvig_Letters_Serif } from "next/font/google";
 import { profile } from "@/lib/content";
 import "./globals.css";
 
@@ -8,9 +8,10 @@ const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
 });
 
-const raleway = Raleway({
-  variable: "--font-raleway",
+const hedvig = Hedvig_Letters_Serif({
+  variable: "--font-hedvig",
   subsets: ["latin"],
+  weight: "400",
 });
 
 export const metadata: Metadata = {
@@ -28,11 +29,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${instrumentSans.variable} ${raleway.variable} h-full antialiased`}
+      className={`${instrumentSans.variable} ${hedvig.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-white text-black">
-        {children}
-      </body>
+      <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );
 }

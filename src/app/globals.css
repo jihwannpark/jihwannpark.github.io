@@ -1,65 +1,29 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fafaf9; /* warm off-white (stone-50) */
+  --foreground: #1c1917; /* stone-900 */
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-raleway);
-  --font-nav: var(--font-instrument-sans);
+  --font-sans: var(--font-instrument-sans);
+  --font-serif: var(--font-hedvig);
 }
 
 html {
-  overflow-anchor: none;
+  background: var(--background);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans);
-  overflow-anchor: none;
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
 }
 
-*,
-::before,
-::after {
-  letter-spacing: -0.03em;
-}
-
-::view-transition-group(root) {
-  animation-duration: 450ms;
-}
-
-::view-transition-old(root) {
-  animation: 220ms ease-in both page-fade-out;
-}
-
-::view-transition-new(root) {
-  animation: 350ms ease-out 120ms both page-fade-in;
-}
-
-@keyframes page-fade-out {
-  to {
-    opacity: 0;
-    transform: translateY(-14px) scale(0.99);
-  }
-}
-
-@keyframes page-fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(14px) scale(0.99);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ::view-transition-old(*),
-  ::view-transition-new(*),
-  ::view-transition-group(*) {
-    animation-duration: 0s !important;
-    animation-delay: 0s !important;
-  }
+/* Serif display face for the name and paper titles (Hedvig Letters Serif). */
+.font-serif {
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  letter-spacing: -0.01em;
 }
