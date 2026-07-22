@@ -13,22 +13,22 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-[#4b3a24]/10 bg-white/85 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-stone-200/70 bg-[#fafaf9]/85 backdrop-blur-md">
       <div
-        className="mx-auto flex h-16 w-full max-w-[1080px] items-center justify-between"
+        className="mx-auto flex h-16 w-full max-w-[880px] items-center justify-between"
         style={{
-          paddingLeft: "clamp(20px, 5vw, 32px)",
-          paddingRight: "clamp(20px, 5vw, 32px)",
+          paddingLeft: "clamp(20px, 5vw, 28px)",
+          paddingRight: "clamp(20px, 5vw, 28px)",
         }}
       >
         <Link
           href="/"
-          className="font-nav text-base font-bold tracking-tight text-[#4b3a24]"
+          className="text-[15px] font-bold tracking-tight text-stone-900"
         >
           {profile.name.toUpperCase()}
         </Link>
 
-        <div className="flex items-center gap-1 font-nav text-sm">
+        <div className="flex items-center gap-1 text-sm">
           {ITEMS.map((item) => {
             const active =
               item.href === "/"
@@ -40,8 +40,8 @@ export default function Nav() {
                 href={item.href}
                 className={`rounded-full px-3 py-1.5 transition ${
                   active
-                    ? "bg-[#4b3a24]/8 font-semibold text-[#4b3a24]"
-                    : "text-[#4b3a24]/60 hover:text-[#4b3a24]"
+                    ? "font-semibold text-stone-900"
+                    : "text-stone-500 hover:text-stone-900"
                 }`}
               >
                 {item.label}
@@ -53,7 +53,7 @@ export default function Nav() {
               href={profile.cv}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full px-3 py-1.5 text-[#4b3a24]/60 transition hover:text-[#4b3a24]"
+              className="rounded-full px-3 py-1.5 text-stone-500 transition hover:text-stone-900"
             >
               CV
             </a>
