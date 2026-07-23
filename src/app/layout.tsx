@@ -1,18 +1,6 @@
 import type { Metadata } from "next";
-import { Instrument_Sans, Hedvig_Letters_Serif } from "next/font/google";
 import { profile } from "@/lib/content";
 import "./globals.css";
-
-const instrumentSans = Instrument_Sans({
-  variable: "--font-instrument-sans",
-  subsets: ["latin"],
-});
-
-const hedvig = Hedvig_Letters_Serif({
-  variable: "--font-hedvig",
-  subsets: ["latin"],
-  weight: "400",
-});
 
 export const metadata: Metadata = {
   title: `${profile.name} | ${profile.role}`,
@@ -27,10 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      className={`${instrumentSans.variable} ${hedvig.variable} h-full antialiased`}
-    >
+    <html lang="en" className="h-full antialiased">
       <body className="flex min-h-full flex-col">{children}</body>
     </html>
   );

@@ -14,7 +14,7 @@ import {
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-6 text-xs font-semibold tracking-[0.14em] text-stone-400 uppercase">
+    <h2 className="mb-6 text-xs font-semibold tracking-[0.16em] text-slate-400 uppercase">
       {children}
     </h2>
   );
@@ -42,37 +42,37 @@ export default function Home() {
           <img
             src={profile.photo}
             alt={profile.name}
-            className="h-40 w-40 shrink-0 rounded-full object-cover ring-1 ring-stone-200"
+            className="h-40 w-40 shrink-0 rounded-full object-cover ring-1 ring-slate-200"
           />
 
           <div className="flex-1">
-            <h1 className="font-serif text-4xl text-stone-900 md:text-[2.75rem]">
+            <h1 className="text-4xl font-semibold tracking-tight text-slate-800 md:text-[2.6rem]">
               {profile.name}
             </h1>
-            <p className="mt-1 text-lg text-stone-600">
+            <p className="mt-1.5 text-lg text-slate-500">
               {profile.role} at{" "}
               {profile.affiliationUrl ? (
                 <a
                   href={profile.affiliationUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-medium text-[#c2410c] underline-offset-4 hover:underline"
+                  className="font-medium text-slate-700 underline-offset-4 hover:underline"
                 >
                   {profile.affiliation}
                 </a>
               ) : (
-                <span className="font-medium text-[#c2410c]">
+                <span className="font-medium text-slate-700">
                   {profile.affiliation}
                 </span>
               )}
             </p>
 
             {profile.greeting && (
-              <p className="mt-6 text-lg text-stone-800">{profile.greeting}</p>
+              <p className="mt-6 text-lg text-slate-700">{profile.greeting}</p>
             )}
 
             {profile.bio.split("\n\n").map((para, i) => (
-              <p key={i} className="mt-3 leading-relaxed text-stone-600">
+              <p key={i} className="mt-3 leading-relaxed text-slate-600">
                 {para}
               </p>
             ))}
@@ -91,10 +91,10 @@ export default function Home() {
                   key={i}
                   className="flex flex-col gap-0.5 sm:flex-row sm:gap-6"
                 >
-                  <span className="shrink-0 text-sm text-stone-400 sm:w-24 sm:pt-0.5">
+                  <span className="shrink-0 text-sm text-slate-400 sm:w-24 sm:pt-0.5">
                     {item.date}
                   </span>
-                  <span className="text-[15px] leading-relaxed text-stone-700">
+                  <span className="text-[15px] leading-relaxed text-slate-700">
                     {item.text}
                   </span>
                 </div>
@@ -114,15 +114,15 @@ export default function Home() {
                   className="flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:justify-between sm:gap-8"
                 >
                   <div>
-                    <h3 className="font-semibold text-stone-900">
+                    <h3 className="font-semibold text-slate-800">
                       {item.degree}
                     </h3>
-                    <p className="text-sm text-stone-500">
+                    <p className="text-sm text-slate-500">
                       {item.institution}
                       {item.detail ? ` · ${item.detail}` : ""}
                     </p>
                   </div>
-                  <span className="shrink-0 text-sm text-stone-400">
+                  <span className="shrink-0 text-sm text-slate-400">
                     {item.period}
                   </span>
                 </div>
@@ -139,7 +139,7 @@ export default function Home() {
               {profile.researchInterests.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-stone-200 bg-white px-4 py-1.5 text-sm text-stone-700"
+                  className="rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-600"
                 >
                   {item}
                 </span>
@@ -155,14 +155,14 @@ export default function Home() {
             <div className="flex flex-col gap-7">
               {selected.map((pub, i) => (
                 <article key={i}>
-                  <p className="text-xs font-semibold tracking-wide text-[#c2410c] uppercase">
+                  <p className="text-xs font-semibold tracking-wide text-slate-400 uppercase">
                     {pub.venue}
                     {pub.date ? ` · ${pub.date}` : ` · ${pub.year}`}
                   </p>
-                  <h3 className="mt-1.5 font-serif text-xl leading-snug text-stone-900">
+                  <h3 className="mt-1.5 text-lg leading-snug font-semibold text-slate-800">
                     {pub.title}
                   </h3>
-                  <p className="mt-1 text-[15px] text-stone-600">
+                  <p className="mt-1 text-[15px] text-slate-600">
                     <Authors authors={pub.authors} />
                   </p>
                   {pub.link && (
@@ -170,7 +170,7 @@ export default function Home() {
                       href={pub.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-2.5 inline-block rounded-md border border-stone-200 bg-white px-2.5 py-1 text-xs font-medium text-stone-600 transition hover:border-[#c2410c] hover:text-[#c2410c]"
+                      className="mt-2.5 inline-block rounded-md border border-slate-200 bg-white px-2.5 py-1 text-xs font-medium text-slate-600 transition hover:border-slate-400 hover:text-slate-900"
                     >
                       Link
                     </a>
@@ -180,7 +180,7 @@ export default function Home() {
             </div>
             <Link
               href="/publications/"
-              className="mt-8 inline-block text-sm font-medium text-[#c2410c] underline-offset-4 hover:underline"
+              className="mt-8 inline-block text-sm font-medium text-slate-700 underline-offset-4 hover:underline"
             >
               All Publications →
             </Link>
@@ -194,14 +194,14 @@ export default function Home() {
             <div className="flex flex-col gap-6">
               {projects.map((p, i) => (
                 <div key={i}>
-                  <h3 className="font-semibold text-stone-900">{p.title}</h3>
-                  <p className="mt-0.5 text-sm text-[#c2410c]">
+                  <h3 className="font-semibold text-slate-800">{p.title}</h3>
+                  <p className="mt-0.5 text-sm text-slate-500">
                     {[p.role, p.organization, p.period]
                       .filter(Boolean)
                       .join(" · ")}
                   </p>
                   {p.summary && (
-                    <p className="mt-1.5 text-[15px] leading-relaxed text-stone-600">
+                    <p className="mt-1.5 text-[15px] leading-relaxed text-slate-600">
                       {p.summary}
                     </p>
                   )}
@@ -221,13 +221,13 @@ export default function Home() {
                   key={i}
                   className="flex flex-col gap-0.5 sm:flex-row sm:gap-6"
                 >
-                  <span className="shrink-0 text-sm text-stone-400 sm:w-24 sm:pt-0.5">
+                  <span className="shrink-0 text-sm text-slate-400 sm:w-24 sm:pt-0.5">
                     {a.date}
                   </span>
-                  <span className="text-[15px] leading-relaxed text-stone-700">
+                  <span className="text-[15px] leading-relaxed text-slate-700">
                     {a.title}
                     {a.organization && (
-                      <span className="text-stone-400"> · {a.organization}</span>
+                      <span className="text-slate-400"> · {a.organization}</span>
                     )}
                   </span>
                 </div>
