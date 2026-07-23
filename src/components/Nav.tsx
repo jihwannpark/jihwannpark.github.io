@@ -13,7 +13,7 @@ export default function Nav() {
   const pathname = usePathname();
 
   return (
-    <nav className="sticky top-0 z-50 w-full border-b border-stone-200/70 bg-[#fafaf9]/85 backdrop-blur-md">
+    <nav className="sticky top-0 z-50 w-full border-b border-slate-200/70 bg-[#fafafa]/85 backdrop-blur-md">
       <div
         className="mx-auto flex h-16 w-full max-w-[880px] items-center justify-between"
         style={{
@@ -23,7 +23,7 @@ export default function Nav() {
       >
         <Link
           href="/"
-          className="text-[15px] font-bold tracking-tight text-stone-900"
+          className="text-[15px] font-bold tracking-tight text-slate-800"
         >
           {profile.name.toUpperCase()}
         </Link>
@@ -40,8 +40,8 @@ export default function Nav() {
                 href={item.href}
                 className={`rounded-full px-3 py-1.5 transition ${
                   active
-                    ? "font-semibold text-stone-900"
-                    : "text-stone-500 hover:text-stone-900"
+                    ? "font-semibold text-slate-800"
+                    : "text-slate-500 hover:text-slate-800"
                 }`}
               >
                 {item.label}
@@ -53,7 +53,7 @@ export default function Nav() {
               href={profile.cv}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full px-3 py-1.5 text-stone-500 transition hover:text-stone-900"
+              className="rounded-full px-3 py-1.5 text-slate-500 transition hover:text-slate-800"
             >
               CV
             </a>

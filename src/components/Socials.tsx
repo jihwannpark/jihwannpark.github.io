@@ -58,7 +58,7 @@ export default function Socials() {
         href={`mailto:${profile.email}`}
         aria-label="Email"
         title={profile.email}
-        className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 text-stone-500 transition hover:border-[#c2410c] hover:text-[#c2410c]"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-500 transition hover:border-slate-500 hover:text-slate-800"
       >
         {iconFor("email")}
       </a>
@@ -71,7 +71,7 @@ export default function Socials() {
           rel="noopener noreferrer"
           aria-label={l.label}
           title={l.label}
-          className="flex h-9 w-9 items-center justify-center rounded-full border border-stone-300 text-stone-500 transition hover:border-[#c2410c] hover:text-[#c2410c]"
+          className="flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 text-slate-500 transition hover:border-slate-500 hover:text-slate-800"
         >
           {iconFor(l.label)}
         </a>
@@ -82,7 +82,7 @@ export default function Socials() {
           href={profile.cv}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex h-9 items-center rounded-full border border-stone-300 px-4 text-sm font-medium text-stone-600 transition hover:border-[#c2410c] hover:text-[#c2410c]"
+          className="flex h-9 items-center rounded-full border border-slate-300 px-4 text-sm font-medium text-slate-600 transition hover:border-slate-500 hover:text-slate-800"
         >
           CV
         </a>

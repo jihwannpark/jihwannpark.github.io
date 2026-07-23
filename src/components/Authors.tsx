@@ -10,7 +10,7 @@ export default function Authors({ authors }: { authors: string }) {
         <span key={i}>
           {part}
           {i < parts.length - 1 && (
-            <span className="font-semibold text-[#9c5b33]">{OWNER_NAME}</span>
+            <span className="font-semibold text-slate-800">{OWNER_NAME}</span>
           )}
         </span>
       ))}
