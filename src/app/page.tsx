@@ -42,7 +42,7 @@ export default function Home() {
           <img
             src={profile.photo}
             alt={profile.name}
-            className="h-40 w-40 shrink-0 rounded-full object-cover ring-1 ring-slate-200"
+            className="h-40 w-40 shrink-0 rounded-full object-cover object-top ring-1 ring-slate-200"
           />
 
           <div className="flex-1">
