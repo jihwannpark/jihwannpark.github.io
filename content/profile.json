@@ -12,12 +12,20 @@
   "researchInterests": [
     "Modeling & Simulation of Terramechanics System",
     "Soil-Machine Interaction Analysis",
-    "Discrete Element Method (DEM)",
-    "AI-assisted Parameter Estimation"
+    "Discrete Element Method (DEM)"
   ],
   "links": [
-    { "label": "GitHub", "url": "https://github.com/latencyspace" },
-    { "label": "Google Scholar", "url": "" },
-    { "label": "LinkedIn", "url": "" }
+    {
+      "label": "GitHub",
+      "url": "https://github.com/latencyspace"
+    },
+    {
+      "label": "Google Scholar",
+      "url": ""
+    },
+    {
+      "label": "LinkedIn",
+      "url": ""
+    }
   ]
 }
