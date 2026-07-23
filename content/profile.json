@@ -5,14 +5,15 @@
   "affiliation": "TCPS Lab, Chonnam National University",
   "affiliationUrl": "https://tcpslab.vercel.app/",
   "photo": "/profile.png",
-  "greeting": "Hi there!",
-  "bio": "I am a master's student at the Terramechanics and Cyber-Physical Systems (TCPS) Lab, Department of Convergence Biosystems Engineering, Chonnam National University.\n\nMy research focuses on modeling and simulating the interaction between off-road machinery and terrain — combining the discrete element method (DEM) with data-driven approaches to describe soil behavior more faithfully.",
+  "greeting": "Thank you for visiting my website!",
+  "bio": "I am a master's student at the Terramechanics and Cyber-Physical Systems (TCPS) Laboratory, Department of Convergence Biosystems Engineering, Chonnam National University.\n\nMy research focuses on modeling and simulating the interaction between off-road machinery and terrain — combining the discrete element method (DEM) with data-driven approaches to describe soil behavior more faithfully.",
   "email": "jihwanpark@jnu.ac.kr",
   "cv": "",
   "researchInterests": [
     "Modeling & Simulation of Terramechanics System",
     "Soil-Machine Interaction Analysis",
-    "Discrete Element Method (DEM)"
+    "Discrete Element Method (DEM)",
+    "Smoothed-Particle Hydrodynamics (SPH)"
   ],
   "links": [
     {
@@ -20,12 +21,12 @@
       "url": "https://github.com/latencyspace"
     },
     {
-      "label": "Google Scholar",
-      "url": ""
+      "label": "Instagram",
+      "url": "https://www.instagram.com/latency.co.kr"
     },
     {
       "label": "LinkedIn",
-      "url": ""
+      "url": "https://www.linkedin.com/in/jihwan-park-13509228b/"
     }
   ]
 }
