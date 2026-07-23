@@ -16,14 +16,16 @@ export default function PublicationsPage() {
       <Nav />
 
       <main
-        className="mx-auto w-full max-w-[1080px] flex-1 pt-16 pb-4"
+        className="mx-auto w-full max-w-[880px] flex-1 pt-14 pb-4"
         style={{
-          paddingLeft: "clamp(20px, 5vw, 32px)",
-          paddingRight: "clamp(20px, 5vw, 32px)",
+          paddingLeft: "clamp(20px, 5vw, 28px)",
+          paddingRight: "clamp(20px, 5vw, 28px)",
         }}
       >
-        <h1 className="text-4xl font-semibold text-[#26343a]">Publications</h1>
-        <p className="mt-3 text-base text-[#4b3a24]/70">
+        <h1 className="text-4xl font-semibold tracking-tight text-slate-800">
+          Publications
+        </h1>
+        <p className="mt-2 text-sm text-slate-500">
           {publications.length} item{publications.length === 1 ? "" : "s"}
         </p>
 
@@ -31,27 +33,27 @@ export default function PublicationsPage() {
           const items = byYear.filter((p) => p.year === year);
           return (
             <section key={year} className="mt-12">
-              <h2 className="mb-4 text-sm font-semibold tracking-[0.12em] text-[#9c5b33]">
+              <h2 className="mb-5 text-xs font-semibold tracking-[0.16em] text-slate-400 uppercase">
                 {year}
               </h2>
-              <div className="divide-y divide-[#4b3a24]/10 border-y border-[#4b3a24]/10">
+              <div className="flex flex-col gap-7">
                 {items.map((pub, i) => (
-                  <article key={i} className="flex gap-5 py-6">
-                    <span className="w-8 shrink-0 text-base font-semibold text-[#4b3a24]/25">
+                  <article key={i} className="flex gap-5">
+                    <span className="w-6 shrink-0 pt-0.5 text-sm text-slate-300">
                       {items.length - i}
                     </span>
                     <div>
-                      <p className="text-sm font-medium tracking-wide text-[#9c5b33]">
+                      <p className="text-xs font-semibold tracking-wide text-slate-400 uppercase">
                         {pub.category}
                         {pub.date ? ` · ${pub.date}` : ""}
                       </p>
-                      <h3 className="mt-1 text-lg font-semibold text-[#26343a]">
+                      <h3 className="mt-1.5 text-lg leading-snug font-semibold text-slate-800">
                         {pub.title}
                       </h3>
-                      <p className="mt-1 text-base text-[#4b3a24]/70">
+                      <p className="mt-1 text-[15px] text-slate-600">
                         <Authors authors={pub.authors} />
                       </p>
-                      <p className="mt-1 text-sm italic text-[#4b3a24]/55">
+                      <p className="mt-0.5 text-sm text-slate-400 italic">
                         {pub.venue}
                       </p>
                       {pub.link && (
@@ -59,7 +61,7 @@ export default function PublicationsPage() {
                           href={pub.link}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-3 inline-block rounded-full border border-[#4b3a24]/20 px-3 py-1 text-xs font-medium text-[#4b3a24]/70 transition hover:border-[#9c5b33] hover:text-[#9c5b33]"
+                          className="mt-2.5 inline-block rounded-md border border-slate-200 bg-white px-2.5 py-1 text-xs font-medium text-slate-600 transition hover:border-slate-400 hover:text-slate-900"
                         >
                           Link
                         </a>
