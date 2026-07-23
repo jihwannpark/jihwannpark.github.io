@@ -1,22 +1,22 @@
 {
   "items": [
     {
-      "title": "인공지능-통계적 추정을 통한 3차원 입자 형상 정의 및 이산요소모델 개발",
-      "authors": "Ji-Hwan Park, Joon-Seo Kim, Moo-Young Oh, and Ji-Tae Kim",
-      "venue": "Korean Society for Agricultural Machinery (KSAM) Spring Conference",
-      "category": "Domestic Conference",
-      "year": 2026,
-      "date": "May 2026",
-      "link": "",
-      "selected": true
-    },
-    {
       "title": "야지 가상환경 구현을 위한 지반의 역학적 특성 방법론 사례 연구",
       "authors": "Joon-Seo Kim, Moo-Young Oh, Ji-Hwan Park, and Ji-Tae Kim",
       "venue": "Korea Institute of Military Science and Technology (KIMST) Conference",
       "category": "Domestic Conference",
       "year": 2026,
       "date": "June 2026",
+      "link": "",
+      "selected": true
+    },
+    {
+      "title": "인공지능-통계적 추정을 통한 3차원 입자 형상 정의 및 이산요소모델 개발",
+      "authors": "Ji-Hwan Park, Joon-Seo Kim, Moo-Young Oh, and Ji-Tae Kim",
+      "venue": "Korean Society for Agricultural Machinery (KSAM) Spring Conference",
+      "category": "Domestic Conference",
+      "year": 2026,
+      "date": "May 2026",
       "link": "",
       "selected": true
     }
