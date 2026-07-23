@@ -1,16 +1,16 @@
 {
   "items": [
     {
-      "degree": "M.S. in Convergence Biosystems Engineering",
+      "degree": "Biosystems Engineering (Master's Program)",
       "institution": "Chonnam National University",
       "detail": "TCPS Lab · Advisor: Prof. Ji-Tae Kim",
-      "period": "2026 – Present"
+      "period": "2026 ~ Present"
     },
     {
-      "degree": "B.S. in Convergence Biosystems Engineering",
+      "degree": "Biosystems Engineering (Bachelor of Engineering)",
       "institution": "Chonnam National University",
-      "detail": "(sample entry — edit in /admin)",
-      "period": "2020 – 2026"
+      "detail": "",
+      "period": "2018.03 ~ 2026.02"
     }
   ]
 }
